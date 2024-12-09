@@ -1,0 +1,469 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+.main-board {
+  background-color: black;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 20%;
+}
+.board-details {
+  width: 80%;
+  margin: auto;
+  padding-top: 20px;
+}
+.board--details h4 {
+  color: white;
+  margin-bottom: 20px;
+}
+.agricultur {
+  width: 85%;
+  padding: 25px;
+}
+.agric-image img {
+  width: 10%;
+}
+.agric--image img{
+  width: 15%;
+}
+.agricultur h3 {
+  color: white;
+}
+.agriculture{
+  width: 30%;
+  margin: auto;
+  padding-top: 100px;
+}
+.agriculture h3{
+  color: black;
+  font-size: 22px;
+}
+.logout {
+  color: white;
+}
+.log-out {
+  display: flex;
+  width: 25%;
+  padding-top: 150px;
+  margin: auto;
+  gap: 5px;
+}
+.log--out h4 {
+  color: #8190a9;
+  font-weight: 100;
+}
+.content {
+  display: flex;
+}
+.dash-board {
+  width: 20%;
+}
+.con-tent {
+  background-color: white;
+  height: 100vh;
+  width: 80%;
+}
+.cont-ent {
+  width: 95%;
+  margin: auto;
+}
+.content-top {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.search-input {
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+  padding: 5px;
+  width: 100%;
+  font-size: 16px;
+  background-color: none;
+  outline: none;
+  box-sizing: border-box;
+}
+.input-holder {
+  width: 60%;
+  position: relative; 
+  /* display: flex;  */
+  align-items: center;
+}
+.search-icon {
+  position: absolute; 
+  left: -13px;
+  color: #aaa; 
+  font-size: 1.2em; 
+  margin-top: 5px;
+}
+.content-img {
+  width: 5%;
+}
+.content-img img {
+  width: 100%;
+  border-radius: 40px;
+}
+.summary h3 {
+  margin-bottom: 10px;
+}
+.cl1 {
+  width: 60%;
+}
+.cl2 {
+  width: 30%;
+}
+.cl2 h3 {
+  margin-bottom: 10px;
+}
+.cl1 h3 {
+  margin-bottom: 10px;
+}
+.color01 {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: space-between;
+  padding-top: 10px;
+  gap: 20px; /* Space between text and circle progress */
+}
+.color-flex {
+  display: flex;
+  gap: 25px;
+}
+.color02 {
+  background-color: #faffe9;
+  height: 100px;
+  width: 100%;
+  border-radius: 8px;
+}
+.color03 {
+  background-color: #d4edd8;
+  height: 100px;
+  width: 100%;
+  border-radius: 8px;
+}
+.weathersummary {
+  display: flex;
+  justify-content: space-between;
+}
+.rice-farm {
+  width: 100%;
+}
+.rice-farm img {
+  width: 100%;
+  border-radius: 24px;
+  height: 350px;
+}
+.temperature {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-bottom: 10px;
+}
+.temperatures {
+  display: flex;
+  justify-content: space-between;
+}
+.w1 {
+  background-color: #d0d6e1;
+  height: 100px;
+  width: 45%;
+  border-radius: 8px;
+  /* margin-bottom: 10px; */
+}
+.w1 h4 {
+  text-align: center;
+  padding-top: 10px;
+}
+.product1 {
+  background-color: #faffe9;
+  height: 150px;
+  width: 30%;
+  border-radius: 8px;
+}
+.product2 {
+  background-color: #e5fef7;
+  height: 150px;
+  width: 30%;
+  border-radius: 8px;
+}
+.product3 {
+  background-color: #faffe9;
+  height: 150px;
+  width: 30%;
+  border-radius: 8px;
+}
+.product-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.harvest {
+  background-color: #d2edda;
+  height: 160px;
+  width: 100%;
+  margin-top: 190px;
+  border-radius: 8px;
+}
+.date {
+  text-align: center;
+  padding-top: 10px;
+}
+.date h4 {
+  margin-bottom: 10px;
+}
+.crops {
+  width: 85%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.harvest-chart{
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: space-between;
+}
+.har-vest h4 {
+  padding-top: 10px;
+}
+.cp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.circle-progress {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #e0e0e0; /* Background color of the circle */
+  stroke-width: 9;
+}
+
+.circle-fill {
+  fill: none;
+  stroke: green; 
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: rotate(-90deg); 
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.5s ease;
+}
+.color0001{
+  background-color: #d2edda;
+  height: 100px;
+  width: 100%;
+  border-radius: 8px;
+}
+.cp h4 {
+  margin-bottom: 10px;
+}
+.cp p {
+  font-weight: bold;
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.tons {
+  font-size: 10px;
+}
+.num-bers {
+  width: 80%;
+  margin: auto;
+  padding-top: 10px;
+  position: relative;
+}
+.num-bers p {
+  margin-top: -10px;
+  font-size: 11px;
+}
+.num-bers h3 {
+  font-size: 30px;
+}
+.degrees {
+  position: absolute;
+  top: 7px;
+  left: 33%;
+  transform: translateX(
+    -50%
+  ); 
+  font-size: 40px; 
+  color: #333; 
+}
+.w-degrees{
+  position: absolute;
+  left: 87%;
+  top: 157px;
+  font-size: 45px;
+}
+.text-with-line {
+  display: flex;
+  flex-direction: column; 
+}
+
+.progress-bar {
+  width: 150px; 
+  height: 5px; 
+  background-color: #e0e0e0; 
+  border-radius: 1px;
+  overflow: hidden;
+  margin-top: 5px; 
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%; 
+  background-color: green; 
+  border-radius: 5px 0 0 5px;
+  transition: width 0.3s ease;
+  width: 20px;
+}
+.progress-fill1 {
+  height: 100%; 
+  background-color: #cae741; 
+  border-radius: 5px 0 0 5px; 
+  transition: width 0.3s ease;
+}
+.progress-fill01 {
+  height: 100%; 
+  background-color: #ebb068; 
+  border-radius: 5px 0 0 5px; 
+  transition: width 0.3s ease;
+}
+.progress-label {
+  position: absolute;
+  transform: translate(-50%, -50%); 
+  color: black; 
+  font-size: 14px;
+  font-weight: bold; 
+  pointer-events: none; 
+  padding-bottom: 15px;
+}
+.progress-label {
+  font-size: 14px; /* Adjust font size */
+  font-weight: bold;
+  color: #333; 
+}
+.progress-item{
+  margin-bottom: 27px;
+}
+.weather-img img{
+  width: 70%;
+}
+.weather-flex{
+  display: flex;
+  width: 70%;
+}
+.today{
+  padding-top: 20px;
+}
+.weather-num-bers h3{
+  font-size: 30px;
+}
+.num_bers{
+  font-size: 14px;
+}
+.today-flex{
+  display: flex;
+  margin-top: -12px;
+  font-size: 11px;
+  gap: 11px;
+}
+.harvest-holder{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+.harvest-holder h4{
+  font-weight: 100;
+}
+.border-line{
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+.dollars{
+  font-weight:900;
+  font-size: 26px;
+}
+.estimate h4{
+  font-weight: 200;
+}
+.soil-btn{
+  background: transparent;
+  padding: 5px 15px;
+  border: none;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  padding-top: 10px;
+  font-family: sans-serif;
+}
+.sign-up-btn{
+  background: transparent;
+  padding: 8px 15px;
+  border: none;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  padding-top: 10px;
+  font-family: sans-serif;
+  width: 100%;
+}
+.signup{
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  height: 90vh;
+  width: 100%;
+  border-radius: 16px;
+  /* margin: auto; */
+  /* margin-top: 30px; */
+}
+.input-fields{
+  width: 70%;
+  margin: auto;
+}
+.fieldone{
+  margin-bottom: 10px;
+}
+.fieldone input{
+  padding: 5px;
+  width: 100%;
+  outline: none;
+}
+.options p{
+  font-size: 13px;
+  margin-top: 20px;
+}
+.side-color{
+  background-color: #1f485b;
+  height: 90vh;
+  width: 30%;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+.flex-colors{
+  display: flex;
+  width: 50%;
+  margin: auto;
+  margin-top: 30px;
+}
+.side-image{
+  padding-top: 130px;
+  width: 100%;
+}
+.side-image img{
+  width: 250px;
+}
+.line{
+  text-decoration: none;
+}
