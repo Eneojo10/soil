@@ -39,7 +39,7 @@ function SignUp() {
               </div>
             </div>
             <div>
-              <button className="sign-up-btn"><Link to="/dashbord">Log in</Link></button>
+              <button className="sign-up-btn"><Link to="/mainboard">Log in</Link></button>
             </div>
             
           </div>
