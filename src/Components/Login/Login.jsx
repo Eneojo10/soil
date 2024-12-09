@@ -1,5 +1,6 @@
 import React from "react";
 import image from "../image/leaf2.png";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   return (
@@ -38,7 +39,7 @@ function SignUp() {
               </div>
             </div>
             <div>
-              <button className="sign-up-btn"><a href="/dashbord">Log in</a></button>
+              <button className="sign-up-btn"><Link to="/dashbord">Log in</Link></button>
             </div>
             
           </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import image from "../image/leaf2.png";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   return (
@@ -54,7 +55,7 @@ function SignUp() {
             <div className="options">
               <p>
                 Already have an account?
-                <span className="login-options"><a href="/login" className="line">Log in</a></span>
+                <span className="login-options"><Link to="/login" className="line">Log in</Link></span>
               </p>
             </div>
           </div>
