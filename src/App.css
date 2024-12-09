@@ -129,7 +129,7 @@
   margin: auto;
   justify-content: space-between;
   padding-top: 10px;
-  gap: 20px; /* Space between text and circle progress */
+  gap: 20px; 
 }
 .color-flex {
   display: flex;
