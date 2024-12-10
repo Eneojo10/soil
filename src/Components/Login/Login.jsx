@@ -15,7 +15,7 @@ function SignUp() {
             cultur
           </h2>
         </div>
-        
+
         <div className="welcome-back">
           <h4>Welcome Back</h4>
           <p>Sign in to your account</p>
@@ -47,9 +47,9 @@ function SignUp() {
             </div>
 
             <div className="btn">
-              <button className="sign-up-btn">
-                Login
-              </button>
+              <Link to={'/mainboard'}>
+                <button className="sign-up-btn">Login</button>
+              </Link>
             </div>
 
             <div className="forgot-password">
