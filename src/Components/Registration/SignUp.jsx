@@ -30,6 +30,9 @@ function SignUp() {
               cultur
             </h2>
           </div>
+          <div className="si-gn-up">
+            <h4>Sign Up</h4>
+          </div>
           <br />
           <br />
           <div className="input-fields">

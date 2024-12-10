@@ -21,6 +21,7 @@ function Dashboard() {
             culture
           </h3>
         </div>
+        
         <div className="board-details">
           {[
             "Dashboard",

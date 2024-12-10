@@ -6,7 +6,9 @@ import { WiDegrees } from "react-icons/wi";
 import image3 from "../image/weather.png";
 import { IoIosSearch } from "react-icons/io";
 import Chart from "../Chart/Chart";
-// import { Pie } from "react-chartjs-2";
+import image03 from "../image/leaf2.png";
+import Hamburger from "../Hamburger/Hamburger"
+
 
 const data = {
   labels: ["Red", "Blue", "Yellow", "Green"],
@@ -57,15 +59,26 @@ function Mainboard() {
               </div>
             </div>
             <br />
+            <div className="ham-burg">
+              <div className="ham-flex">
+                <div className="img03">
+                  <img src={image03} alt="" />
+                </div>
+                <div className="ham">
+                  <Hamburger/>
+                </div>
+              </div>
+            </div>
 
             <div className="weathersummary">
+              
               <div className="cl1">
                 <h3>Summary</h3>
                 <div className="color-flex">
                   <div className="color0001">
                     <div className="color01">
                       <div className="cp">
-                        <h2>Wheat</h2>
+                        <h2>Total Farm</h2>
                         <h5>Hello World...</h5>
                         <p>
                           125 <span className="tons">Tons</span>
@@ -110,7 +123,95 @@ function Mainboard() {
                   <div className="color02">
                     <div className="color01">
                       <div className="cp">
-                        <h2>Rice</h2>
+                        <h2>Farm Lands</h2>
+                        <h5>Hello World...</h5>
+                        <p>
+                          980 <span className="tons">Tons</span>
+                        </p>
+                      </div>
+                      <div className="circle-progress">
+                        <svg width="40" height="80" viewBox="0 0 100 100">
+                          <circle
+                            className="circle-bg"
+                            cx="50"
+                            cy="50"
+                            r="45"
+                          />
+                          <circle
+                            className="circle-fill"
+                            cx="50"
+                            cy="50"
+                            r="45"
+                            style={{
+                              strokeDasharray: "283",
+                              strokeDashoffset: "169",
+                            }}
+                          />
+
+                          <text
+                            x="50"
+                            y="50"
+                            textAnchor="middle"
+                            stroke="black"
+                            strokeWidth="1px"
+                            dy=".3em"
+                            fontSize={"28px"}
+                            className="circle-text"
+                          >
+                            40%
+                          </text>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="color02">
+                    <div className="color01">
+                      <div className="cp">
+                        <h2>Total Soil Test</h2>
+                        <h5>Hello World...</h5>
+                        <p>
+                          980 <span className="tons">Tons</span>
+                        </p>
+                      </div>
+                      <div className="circle-progress">
+                        <svg width="40" height="80" viewBox="0 0 100 100">
+                          <circle
+                            className="circle-bg"
+                            cx="50"
+                            cy="50"
+                            r="45"
+                          />
+                          <circle
+                            className="circle-fill"
+                            cx="50"
+                            cy="50"
+                            r="45"
+                            style={{
+                              strokeDasharray: "283",
+                              strokeDashoffset: "169",
+                            }}
+                          />
+
+                          <text
+                            x="50"
+                            y="50"
+                            textAnchor="middle"
+                            stroke="black"
+                            strokeWidth="1px"
+                            dy=".3em"
+                            fontSize={"28px"}
+                            className="circle-text"
+                          >
+                            40%
+                          </text>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="color02">
+                    <div className="color01">
+                      <div className="cp">
+                        <h2>Total Farm Request</h2>
                         <h5>Hello World...</h5>
                         <p>
                           980 <span className="tons">Tons</span>
