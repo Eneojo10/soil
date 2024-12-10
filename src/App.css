@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 .main-board {
-  background-color: black;
+  background-color: #1e293b;
   height: 100vh;
   position: fixed;
   top: 0;
@@ -16,6 +16,17 @@
   width: 80%;
   margin: auto;
   padding-top: 20px;
+  color: red;
+}
+.board--details h4 {
+  color: black;
+}
+.forgot-password h5 {
+  font-weight: 300;
+}
+.board--details.selected h4 {
+  color: #2c3e50;
+  font-weight: 300;
 }
 .board--details h4 {
   color: white;
@@ -28,18 +39,18 @@
 .agric-image img {
   width: 10%;
 }
-.agric--image img{
-  width: 15%;
+.agric--image img {
+  width: 18%;
 }
 .agricultur h3 {
   color: white;
 }
-.agriculture{
-  width: 30%;
+.agriculture {
+  width: 20%;
   margin: auto;
   padding-top: 100px;
 }
-.agriculture h3{
+.agriculture h3 {
   color: black;
   font-size: 22px;
 }
@@ -90,15 +101,15 @@
 }
 .input-holder {
   width: 60%;
-  position: relative; 
+  position: relative;
   /* display: flex;  */
   align-items: center;
 }
 .search-icon {
-  position: absolute; 
+  position: absolute;
   left: -13px;
-  color: #aaa; 
-  font-size: 1.2em; 
+  color: #aaa;
+  font-size: 1.2em;
   margin-top: 5px;
 }
 .content-img {
@@ -129,7 +140,7 @@
   margin: auto;
   justify-content: space-between;
   padding-top: 10px;
-  gap: 20px; 
+  gap: 20px;
 }
 .color-flex {
   display: flex;
@@ -153,7 +164,26 @@
 }
 .rice-farm {
   width: 100%;
+  position: relative;
+  display: inline-block;
 }
+.rice-farm .overlay-text {
+  position: absolute;
+  top: 85%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+}
+.board--details.selected {
+  background-color: #e8f3d6;
+  border-radius: 4px;
+  height: 35px;
+}
+
 .rice-farm img {
   width: 100%;
   border-radius: 24px;
@@ -216,14 +246,14 @@
 .date h4 {
   margin-bottom: 10px;
 }
-.crops {
+/* .crops {
   width: 85%;
   margin: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
-}
-.harvest-chart{
+} */
+.harvest-chart {
   display: flex;
   width: 90%;
   margin: auto;
@@ -251,14 +281,14 @@
 
 .circle-fill {
   fill: none;
-  stroke: green; 
+  stroke: green;
   stroke-width: 10;
   stroke-linecap: round;
-  transform: rotate(-90deg); 
+  transform: rotate(-90deg);
   transform-origin: 50% 50%;
   transition: stroke-dashoffset 0.5s ease;
 }
-.color0001{
+.color0001 {
   background-color: #d2edda;
   height: 100px;
   width: 100%;
@@ -292,13 +322,11 @@
   position: absolute;
   top: 7px;
   left: 33%;
-  transform: translateX(
-    -50%
-  ); 
-  font-size: 40px; 
-  color: #333; 
+  transform: translateX(-50%);
+  font-size: 40px;
+  color: #333;
 }
-.w-degrees{
+.w-degrees {
   position: absolute;
   left: 87%;
   top: 157px;
@@ -306,98 +334,98 @@
 }
 .text-with-line {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 .progress-bar {
-  width: 150px; 
-  height: 5px; 
-  background-color: #e0e0e0; 
+  width: 150px;
+  height: 5px;
+  background-color: #e0e0e0;
   border-radius: 1px;
   overflow: hidden;
-  margin-top: 5px; 
+  margin-top: 5px;
   position: relative;
 }
 
 .progress-fill {
-  height: 100%; 
-  background-color: green; 
+  height: 100%;
+  background-color: green;
   border-radius: 5px 0 0 5px;
   transition: width 0.3s ease;
   width: 20px;
 }
 .progress-fill1 {
-  height: 100%; 
-  background-color: #cae741; 
-  border-radius: 5px 0 0 5px; 
+  height: 100%;
+  background-color: #cae741;
+  border-radius: 5px 0 0 5px;
   transition: width 0.3s ease;
 }
 .progress-fill01 {
-  height: 100%; 
-  background-color: #ebb068; 
-  border-radius: 5px 0 0 5px; 
+  height: 100%;
+  background-color: #ebb068;
+  border-radius: 5px 0 0 5px;
   transition: width 0.3s ease;
 }
 .progress-label {
   position: absolute;
-  transform: translate(-50%, -50%); 
-  color: black; 
+  transform: translate(-50%, -50%);
+  color: black;
   font-size: 14px;
-  font-weight: bold; 
-  pointer-events: none; 
+  font-weight: bold;
+  pointer-events: none;
   padding-bottom: 15px;
 }
 .progress-label {
   font-size: 14px; /* Adjust font size */
   font-weight: bold;
-  color: #333; 
+  color: #333;
 }
-.progress-item{
+.progress-item {
   margin-bottom: 27px;
 }
-.weather-img img{
+.weather-img img {
   width: 70%;
 }
-.weather-flex{
+.weather-flex {
   display: flex;
   width: 70%;
 }
-.today{
+.today {
   padding-top: 20px;
 }
-.weather-num-bers h3{
+.weather-num-bers h3 {
   font-size: 30px;
 }
-.num_bers{
+.num_bers {
   font-size: 14px;
 }
-.today-flex{
+.today-flex {
   display: flex;
   margin-top: -12px;
   font-size: 11px;
   gap: 11px;
 }
-.harvest-holder{
+.harvest-holder {
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 7px;
 }
-.harvest-holder h4{
+.harvest-holder h4 {
   font-weight: 100;
 }
-.border-line{
+.border-line {
   border-bottom: 1px solid black;
   width: 100%;
 }
-.dollars{
-  font-weight:900;
+.dollars {
+  font-weight: 900;
   font-size: 26px;
 }
-.estimate h4{
+.estimate h4 {
   font-weight: 200;
 }
-.soil-btn{
+.soil-btn {
   background: transparent;
   padding: 5px 15px;
   border: none;
@@ -408,7 +436,7 @@
   padding-top: 10px;
   font-family: sans-serif;
 }
-.sign-up-btn{
+.sign-up-btn {
   background: transparent;
   padding: 8px 15px;
   border: none;
@@ -420,50 +448,137 @@
   font-family: sans-serif;
   width: 100%;
 }
-.signup{
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+.signup {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   height: 90vh;
-  width: 100%;
+  width: 50%;
   border-radius: 16px;
-  /* margin: auto; */
-  /* margin-top: 30px; */
+  margin: auto;
+  margin-top: 30px;
 }
-.input-fields{
-  width: 70%;
+.signup2{
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  height: 90vh;
+  width: 50%;
+  border-radius: 16px;
+  margin: auto;
+  margin-top: 30px;
+}
+.input-fields {
+  width: 55%;
   margin: auto;
 }
-.fieldone{
+.fieldone {
   margin-bottom: 10px;
 }
-.fieldone input{
+.fieldone input {
   padding: 5px;
   width: 100%;
   outline: none;
 }
-.options p{
+.options p {
   font-size: 13px;
   margin-top: 20px;
 }
-.side-color{
+.side-color {
   background-color: #1f485b;
   height: 90vh;
   width: 30%;
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
 }
-.flex-colors{
+.welcome-back{
+  display: none;
+}
+/* .flex-colors {
   display: flex;
   width: 50%;
   margin: auto;
   margin-top: 30px;
-}
-.side-image{
+} */
+.side-image {
   padding-top: 130px;
   width: 100%;
 }
-.side-image img{
+.side-image img {
   width: 250px;
 }
-.line{
+.line {
   text-decoration: none;
+}
+.agriculture2{
+  display: none;
+}
+@media (max-width: 500px) {
+  .flex-colors {
+    width: 100%;
+  }
+  .side-image {
+    display: none;
+  }
+  .side-color {
+    display: none;
+  }
+  .signup {
+    height: 300px;
+    width: 100%;
+  }
+  .signup2{
+    width: 100%;
+    height: 500px;
+  }
+  .input-fields {
+    width: 85%;
+  }
+  .fieldone {
+    margin-bottom: 10px;
+  }
+  .fieldone input {
+    padding: 15px;
+  }
+  .agriculture {
+    display: none;
+  }
+  .side-image {
+    margin-top: 50px;
+  }
+  .sign-up-btn {
+    color: white;
+  }
+  .welcome-back{
+    display: block;
+    text-align: center;
+    /* font-size: 20px; */
+  }
+  .welcome-back h4{
+    font-weight: 800;
+    font-size: 24px;
+    font-family: sans-serif;
+  }
+  .agriculture2{
+    display: block;
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 10px;
+  }
+  .agric--image{
+    margin-bottom: 10px;
+  }
+  .agric--image img{
+    width: 10%;
+  }
+  .sign-up-btn{
+    padding: 15px;
+    color: white;
+    font-size: 18px;
+  }
+  label{
+    font-size: 18px;
+  }
+  .forgot-password h5{
+    font-size: 18px;
+    padding-top: 10px;
+  }
 }

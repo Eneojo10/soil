@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import image from "../image/leaf2.png";
 import { AiOutlineLogout } from "react-icons/ai";
 
 function Dashboard() {
+  const [selected, setSelected] = useState(null);
+
+  const handleClick = (index) => {
+    setSelected(index);
+  };
+
   return (
     <div>
       <div className="main-board">
@@ -16,27 +22,29 @@ function Dashboard() {
           </h3>
         </div>
         <div className="board-details">
-          <div className="board--details">
-            <h4>Dashboard</h4>
-          </div>
-          <div className="board--details">
-            <h4>Analytics</h4>
-          </div>
-          <div className="board--details">
-            <h4>Fields</h4>
-          </div>
-          <div className="board--details">
-            <h4>Harvesting</h4>
-          </div>
-          <div className="board--details">
-            <h4>Finances</h4>
-          </div>
-          <div className="board--details">
-            <h4>Weather</h4>
-          </div>
-          <div className="board--details">
-            <h4>Settings</h4>
-          </div>
+          {[
+            "Dashboard",
+            "Analytics",
+            "Fields",
+            "Harvesting",
+            "Finances",
+            "Weather",
+            "Settings",
+          ].map((item, index) => (
+            <div
+              key={index}
+              className={`board--details ${
+                selected === index ? "selected" : ""
+              }`}
+              onClick={() => handleClick(index)}
+              style={{
+                // border: selected === index ? "2px solid " : "none",
+                cursor: "pointer",
+              }}
+            >
+              <h4>{item}</h4>
+            </div>
+          ))}
         </div>
 
         <div className="log-out">

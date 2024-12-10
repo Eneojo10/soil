@@ -6,26 +6,33 @@ function SignUp() {
   return (
     <div>
       <div className="flex-colors">
-        <div className="side-color">
-          <div className="side-image">
-            <img src={image} alt="" />
-          </div>
-
+        <div className="agriculture2">
+          <h2>
+            agri
+            <span className="agric--image">
+              <img src={image} alt="" />
+            </span>
+            cultur
+          </h2>
+        </div>
+        
+        <div className="welcome-back">
+          <h4>Welcome Back</h4>
+          <p>Sign in to your account</p>
         </div>
         <div className="signup">
           <div className="agriculture">
-            <h3>
+            <h2>
               agri
               <span className="agric--image">
                 <img src={image} alt="" />
               </span>
-              culture
-            </h3>
+              cultur
+            </h2>
           </div>
           <br />
           <br />
           <div className="input-fields">
-            
             <div className="fieldone">
               <label htmlFor="">Email</label>
               <div>
@@ -38,10 +45,16 @@ function SignUp() {
                 <input type="text" />
               </div>
             </div>
-            <div>
-              <button className="sign-up-btn"><Link to="/mainboard">Log in</Link></button>
+
+            <div className="btn">
+              <button className="sign-up-btn">
+                Login
+              </button>
             </div>
-            
+
+            <div className="forgot-password">
+              <h5>Don't have an account? Sign Up</h5>
+            </div>
           </div>
         </div>
       </div>

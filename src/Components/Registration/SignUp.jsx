@@ -6,27 +6,35 @@ function SignUp() {
   return (
     <div>
       <div className="flex-colors">
-        <div className="side-color">
-          <div className="side-image">
-            <img src={image} alt="" />
-          </div>
-
+        <div className="agriculture2">
+          <h2>
+            agri
+            <span className="agric--image">
+              <img src={image} alt="" />
+            </span>
+            cultur
+          </h2>
         </div>
-        <div className="signup">
+        
+        <div className="welcome-back">
+          <h4>Welcome </h4>
+          <p>Create an account</p>
+        </div>
+        <div className="signup2">
           <div className="agriculture">
-            <h3>
+            <h2>
               agri
               <span className="agric--image">
                 <img src={image} alt="" />
               </span>
-              culture
-            </h3>
+              cultur
+            </h2>
           </div>
           <br />
           <br />
           <div className="input-fields">
             <div className="fieldone">
-              <label htmlFor="">Full name</label>
+              <label htmlFor="">Full Name</label>
               <div>
                 <input type="text" />
               </div>
@@ -38,7 +46,7 @@ function SignUp() {
               </div>
             </div>
             <div className="fieldone">
-              <label htmlFor="">Phone number</label>
+              <label htmlFor="">Phone Number</label>
               <div>
                 <input type="text" />
               </div>
@@ -49,14 +57,15 @@ function SignUp() {
                 <input type="text" />
               </div>
             </div>
-            <div>
-              <button className="sign-up-btn">Create Account</button>
+
+            <div className="btn">
+              <button className="sign-up-btn">
+                Create account
+              </button>
             </div>
-            <div className="options">
-              <p>
-                Already have an account?
-                <span className="login-options"><Link to="/login" className="line">Log in</Link></span>
-              </p>
+
+            <div className="forgot-password">
+              <h5>Already have account? Login</h5>
             </div>
           </div>
         </div>

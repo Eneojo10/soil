@@ -1,12 +1,12 @@
 import React from "react";
 import Dashboard from "../Dashboard/Dashboard";
 import image from "../image/user2.jpg";
-import image2 from "../image/rice.jpg";
+import image2 from "../image/soil.jpg";
 import { WiDegrees } from "react-icons/wi";
 import image3 from "../image/weather.png";
 import { IoIosSearch } from "react-icons/io";
 import Chart from "../Chart/Chart";
-import { Pie } from "react-chartjs-2";
+// import { Pie } from "react-chartjs-2";
 
 const data = {
   labels: ["Red", "Blue", "Yellow", "Green"],
@@ -156,9 +156,10 @@ function Mainboard() {
                 <br />
 
                 <div>
-                  <h3>Manage you Farm</h3>
+                  <h3>Manage your Farm</h3>
                   <div className="rice-farm">
-                    <img src={image2} alt="" />
+                    <img src={image2} alt="Rice farm" />
+                    <div className="overlay-text"><h5>Manage Your Farm...</h5></div>
                   </div>
                 </div>
                 <br />
