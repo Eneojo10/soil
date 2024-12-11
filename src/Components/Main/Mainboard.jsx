@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Dashboard from "../Dashboard/Dashboard";
 import image from "../image/user2.jpg";
 import image2 from "../image/soil.jpg";
@@ -8,6 +8,7 @@ import { IoIosSearch } from "react-icons/io";
 import Chart from "../Chart/Chart";
 import image03 from "../image/leaf2.png";
 import Hamburger from "../Hamburger/Hamburger";
+import axios from "axios";
 
 const data = {
   labels: ["Red", "Blue", "Yellow", "Green"],
@@ -34,6 +35,31 @@ const options = {
 };
 
 function Mainboard() {
+  const [farmers, setFarmers] = useState({});
+
+  useEffect(() => {
+    const fetchFarmers = async () => {
+      try {
+        let token=localStorage.getItem("token");
+        
+        const response = await axios.get(
+          "https://agriculture-server-beta.onrender.com/api/v1/admin/analytics",
+          {headers: {
+            "Authorization" : `Bearer ${token}`
+          }
+        }
+        );
+        console.log(response.data.data);
+
+        setFarmers(response.data.data);
+      } catch (error) {
+        console.error("Error fetching summary data:", error);
+      }
+    };
+
+    fetchFarmers();
+  }, []);
+
   return (
     <div>
       <div className="content">
@@ -76,10 +102,11 @@ function Mainboard() {
                   <div className="color0001">
                     <div className="color01">
                       <div className="cp">
-                        <h3>Total Farm</h3>
+                        <h3>Farmers</h3>
                         {/* <h5>Hello World...</h5> */}
                         <p>
-                          125 <span className="tons">Tons</span>
+                          {farmers.totalUsers}
+                          
                         </p>
                       </div>
                       <div className="circle-progress">
@@ -124,7 +151,7 @@ function Mainboard() {
                         <h3>Farm Lands</h3>
                         {/* <h5>Hello World...</h5> */}
                         <p>
-                          980 <span className="tons">Tons</span>
+                          {farmers.totalLands} 
                         </p>
                       </div>
                       <div className="circle-progress">
@@ -168,10 +195,10 @@ function Mainboard() {
                   <div className="color02">
                     <div className="color01">
                       <div className="cp">
-                        <h3>Total Soil Tester</h3>
+                        <h3> Soil Tester</h3>
                         {/* <h5>Hello World...</h5> */}
                         <p>
-                          980 <span className="tons">Tons</span>
+                          980
                         </p>
                       </div>
                       <div className="circle-progress">
@@ -212,10 +239,10 @@ function Mainboard() {
                   <div className="color0001">
                     <div className="color01">
                       <div className="cp">
-                        <h3>Total  Request</h3>
+                        <h3>Soil Request</h3>
                         {/* <h5>Hello World...</h5> */}
                         <p>
-                          980 <span className="tons">Tons</span>
+                          {farmers.totalRequests}
                         </p>
                       </div>
                       <div className="circle-progress">
@@ -260,21 +287,14 @@ function Mainboard() {
                 <div>
                   <h3>Manage your Farm</h3>
                   <div className="rice-farm">
-                    <table className="table table-striped"
-                      style={{width: "100%" }}
+                    <table
+                      className="table table-striped"
+                      style={{ width: "100%" }}
                     >
                       <thead>
                         <tr>
-                          <th
-                            style={{ padding: "8px" }}
-                          >
-                            Maize
-                          </th>
-                          <th
-                            style={{  padding: "8px" }}
-                          >
-                            Rice
-                          </th>
+                          <th style={{ padding: "8px" }}>Maize</th>
+                          <th style={{ padding: "8px" }}>Rice</th>
                           <th
                             style={{
                               // border: "2px solid green",

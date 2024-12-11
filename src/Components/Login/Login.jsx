@@ -27,8 +27,8 @@ function SignUp () {
       console.log('Login response:', response)
 
       if (response.data.data.token) {
-        localStorage.setItem('token', response.data.token)
-        localStorage.setItem('user', JSON.stringify(response.data.user))
+        localStorage.setItem('token', response.data.data.token)
+        localStorage.setItem('user', JSON.stringify(response.data.data.user))
 
         if (response.data.data.role === 'admin') {
           localStorage.setItem('role', 'admin')

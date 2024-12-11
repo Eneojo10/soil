@@ -7,22 +7,6 @@ import axios from "axios";
 
 function Farmland() {
   const [dropdownVisible, setDropdownVisible] = useState(null);
-  const [farmers, setFarmers] = useState([]);
-
-  // Fetch farmer data
-  useEffect(() => {
-    const fetchFarmers = async () => {
-      try {
-        const response = await axios.get(
-          "https://agriculture-server-beta.onrender.com/api/v1/admin/analytics"
-        );
-        setFarmers(response.data); 
-      } catch (error) {
-        console.error("Error fetching farmers:", error);
-      }
-    };
-    fetchFarmers();
-  }, []);
 
   const toggleDropdown = (index) => {
     setDropdownVisible((prev) => (prev === index ? null : index));
@@ -53,17 +37,17 @@ function Farmland() {
                 </tr>
               </thead>
               <tbody>
-                {farmers.map((farmer, index) => (
-                  <tr key={farmer.id}>
+                {[1, 2].map((row, index) => (
+                  <tr key={index}>
                     <td>{index + 1}</td>
-                    <td>{farmer.name}</td>
-                    <td>{farmer.email}</td>
-                    <td>{farmer.phone}</td>
-                    <td>{farmer.address}</td>
-                    <td>{farmer.location}</td>
-                    <td>{farmer.dob}</td>
-                    <td>{farmer.stateOfOrigin}</td>
-                    <td>{farmer.localGovt}</td>
+                    <td>Green Acres</td>
+                    <td>California</td>
+                    <td>200</td>
+                    <td>John Doe</td>
+                    <td>John Doe</td>
+                    <td>John Doe</td>
+                    <td>John Doe</td>
+                    <td>John Doe</td>
                     <td>
                       <div className="dropdown">
                         <button
@@ -78,7 +62,7 @@ function Farmland() {
                             <li>
                               <Link
                                 className="dropdown-item"
-                                to={`/farm/${farmer.id}`}
+                                to="/farm"
                                 style={{
                                   textDecoration: "none",
                                   fontWeight: "700",
