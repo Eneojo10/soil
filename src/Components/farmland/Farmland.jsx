@@ -1,11 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Dashboard from "../Dashboard/Dashboard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 function Farmland() {
   const [dropdownVisible, setDropdownVisible] = useState(null);
+  const [farmers, setFarmers] = useState([]);
+
+  // Fetch farmer data
+  useEffect(() => {
+    const fetchFarmers = async () => {
+      try {
+        const response = await axios.get(
+          "https://agriculture-server-beta.onrender.com/api/v1/admin/analytics"
+        );
+        setFarmers(response.data); 
+      } catch (error) {
+        console.error("Error fetching farmers:", error);
+      }
+    };
+    fetchFarmers();
+  }, []);
 
   const toggleDropdown = (index) => {
     setDropdownVisible((prev) => (prev === index ? null : index));
@@ -36,17 +53,17 @@ function Farmland() {
                 </tr>
               </thead>
               <tbody>
-                {[1, 2].map((row, index) => (
-                  <tr key={index}>
+                {farmers.map((farmer, index) => (
+                  <tr key={farmer.id}>
                     <td>{index + 1}</td>
-                    <td>Green Acres</td>
-                    <td>California</td>
-                    <td>200</td>
-                    <td>John Doe</td>
-                    <td>John Doe</td>
-                    <td>John Doe</td>
-                    <td>John Doe</td>
-                    <td>John Doe</td>
+                    <td>{farmer.name}</td>
+                    <td>{farmer.email}</td>
+                    <td>{farmer.phone}</td>
+                    <td>{farmer.address}</td>
+                    <td>{farmer.location}</td>
+                    <td>{farmer.dob}</td>
+                    <td>{farmer.stateOfOrigin}</td>
+                    <td>{farmer.localGovt}</td>
                     <td>
                       <div className="dropdown">
                         <button
@@ -61,7 +78,7 @@ function Farmland() {
                             <li>
                               <Link
                                 className="dropdown-item"
-                                to="/farm"
+                                to={`/farm/${farmer.id}`}
                                 style={{
                                   textDecoration: "none",
                                   fontWeight: "700",

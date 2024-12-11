@@ -40,8 +40,8 @@ function Dashboard() {
         >
           {[
             { name: "Dashboard", path: "/mainboard" },
-            { name: "Manage Farmers", path: "/farmers" },
-            { name: "Manage Farm Land", path: "/farms" },
+            { name: "Farmers", path: "/farmers" },
+            { name: " Farm Land", path: "/farms" },
             { name: "Soil Tester", path: "/soiltest" },
             { name: "Test Request", path: "/farm-request" },
           ].map((item, index) => (
