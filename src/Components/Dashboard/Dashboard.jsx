@@ -13,14 +13,14 @@ function Dashboard() {
   return (
     <div>
       <div className="main-board">
-        <Link to={'/mainboard'} className="b-line">
+        <Link to={"/mainboard"} className="b-line">
           <div className="agricultur">
             <h3>
               agri
               <span className="agric-image">
                 <img src={image} alt="" />
               </span>
-              culture
+              cultur
             </h3>
           </div>
         </Link>
@@ -32,7 +32,12 @@ function Dashboard() {
           />
         </div>
 
-        <div className="board-details">
+        <div
+          className="board-details"
+          style={{
+            fontFamily: "sans-serif",
+          }}
+        >
           {[
             { name: "Dashboard", path: "/mainboard" },
             { name: "Manage Farmers", path: "/farmers" },

@@ -163,12 +163,12 @@ function Mainboard() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="color-flex">
                   <div className="color02">
                     <div className="color01">
                       <div className="cp">
-                        <h3>Total Soil Test</h3>
+                        <h3>Total Soil Tester</h3>
                         {/* <h5>Hello World...</h5> */}
                         <p>
                           980 <span className="tons">Tons</span>
@@ -212,7 +212,7 @@ function Mainboard() {
                   <div className="color0001">
                     <div className="color01">
                       <div className="cp">
-                        <h3>Total Farm Request</h3>
+                        <h3>Total  Request</h3>
                         {/* <h5>Hello World...</h5> */}
                         <p>
                           980 <span className="tons">Tons</span>
@@ -260,10 +260,94 @@ function Mainboard() {
                 <div>
                   <h3>Manage your Farm</h3>
                   <div className="rice-farm">
-                    <img src={image2} alt="Rice farm" />
-                    <div className="overlay-text">
-                      <h5>Manage Your Farm...</h5>
-                    </div>
+                    <table className="table table-striped"
+                      style={{width: "100%" }}
+                    >
+                      <thead>
+                        <tr>
+                          <th
+                            style={{ padding: "8px" }}
+                          >
+                            Maize
+                          </th>
+                          <th
+                            style={{  padding: "8px" }}
+                          >
+                            Rice
+                          </th>
+                          <th
+                            style={{
+                              // border: "2px solid green",
+                              padding: "8px",
+                            }}
+                          >
+                            Wheat
+                          </th>
+                          <th
+                            style={{
+                              // border: "2px solid orange",
+                              padding: "8px",
+                            }}
+                          >
+                            Beans
+                          </th>
+                          <th
+                            style={{
+                              // border: "2px solid purple",
+                              padding: "8px",
+                            }}
+                          >
+                            Soil
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[1, 2, 3].map((row, rowIndex) => (
+                          <tr key={rowIndex}>
+                            <td
+                              style={{
+                                // border: "2px solid #d2edda",
+                                padding: "8px",
+                              }}
+                            >
+                              Data 1-{row}
+                            </td>
+                            <td
+                              style={{
+                                // border: "2px solid #8098ab",
+                                padding: "8px",
+                              }}
+                            >
+                              Data 2-{row}
+                            </td>
+                            <td
+                              style={{
+                                // border: "2px solid green",
+                                padding: "8px",
+                              }}
+                            >
+                              Data 3-{row}
+                            </td>
+                            <td
+                              style={{
+                                // border: "2px solid orange",
+                                padding: "8px",
+                              }}
+                            >
+                              Data 4-{row}
+                            </td>
+                            <td
+                              style={{
+                                // border: "2px solid purple",
+                                padding: "8px",
+                              }}
+                            >
+                              Data 5-{row}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
                 </div>
                 <br />
@@ -402,9 +486,9 @@ function Mainboard() {
                   </div>
                 </div>
                 <br />
-                <div className="soil-button">
+                {/* <div className="soil-button">
                   <button className="soil-btn">Request for Soil Test</button>
-                </div>
+                </div> */}
               </div>
               <div className="cl2">
                 <h3>Weather Forecast</h3>

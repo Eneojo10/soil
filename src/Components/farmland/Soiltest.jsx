@@ -43,8 +43,7 @@ function Farmland() {
                     <td>John Doe</td>
                     <td>John Doe</td>
                     <td>John Doe</td>
-                    {/* <td>John Doe</td> */}
-                    {/* <td>John Doe</td> */}
+                    
                     <td>
                       <div className="dropdown">
                         <button
