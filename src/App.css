@@ -12,17 +12,47 @@
   z-index: 1000;
   width: 20%;
 }
+.tab-flex {
+  display: flex;
+}
 .board-details {
   width: 80%;
   margin: auto;
   padding-top: 20px;
   color: red;
 }
+.b-line{
+  text-decoration: none;
+}
+.dropdown-menu {
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+.dropdown-item{
+  font-size: 12px;
+}
+
 .board--details h4 {
   color: black;
 }
 .forgot-password h5 {
   font-weight: 300;
+  margin-top: 10px;
 }
 .board--details.selected h4 {
   color: #2c3e50;
@@ -50,8 +80,7 @@
   margin: auto;
   padding-top: 100px;
 }
-.agriculture h3 {
-  color: black;
+.agriculture h2 {
   font-size: 22px;
 }
 .logout {
@@ -142,15 +171,56 @@
   padding-top: 10px;
   gap: 20px;
 }
+.table {
+  width: 100%;
+}
 .color-flex {
   display: flex;
   gap: 25px;
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+.tb {
+  width: 80%;
+  /* margin: auto; */
+}
+label {
+  font-size: 18px;
+}
+.table th {
+  background-color: #f4f4f4;
 }
 .color02 {
   background-color: #faffe9;
   height: 100px;
   width: 100%;
   border-radius: 8px;
+  margin-bottom: 20px;
 }
 .color03 {
   background-color: #d4edd8;
@@ -393,8 +463,16 @@
 .today {
   padding-top: 20px;
 }
+.land {
+  background-image: url("./Components/image/land.jpg");
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .weather-num-bers h3 {
   font-size: 30px;
+  margin-top: -20px;
 }
 .num_bers {
   font-size: 14px;
@@ -449,15 +527,15 @@
   width: 100%;
 }
 .signup {
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
-    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-  height: 90vh;
+  background-color: white;
+  height: 450px;
   width: 50%;
-  border-radius: 16px;
+  /* border-radius: 16px; */
   margin: auto;
-  margin-top: 30px;
+  margin-top: 10px;
 }
-.signup2{
+
+.signup2 {
   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
     rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
   height: 90vh;
@@ -489,10 +567,12 @@
   border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
 }
-.welcome-back{
-  display: none;
+.welcome-back {
+  width: 100%;
+  text-align: center;
 }
-.si-gn-up{
+
+.si-gn-up {
   text-align: center;
   color: green;
 }
@@ -506,10 +586,10 @@
 .line {
   text-decoration: none;
 }
-.agriculture2{
+.agriculture2 {
   display: none;
 }
-.ham-burg{
+.ham-burg {
   display: none;
 }
 .hamburger-menu {
@@ -524,6 +604,9 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+.input-holders {
+  display: none;
 }
 .line {
   width: 30px;
@@ -548,41 +631,50 @@
   .flex-colors {
     width: 100%;
   }
-  .menu{
+  .menu {
     width: 395px;
   }
-  .ham{
+  .ham {
     display: block;
     margin-top: 18px;
     justify-content: space-between;
     /* width: 5%; */
   }
-  
+
   .side-image {
     display: none;
   }
   .side-color {
     display: none;
   }
-  .signup {
-    height: 300px;
-    width: 100%;
+  .signup{
+    width: 95%;
+    margin: auto;
+    height: 600px;
+    margin-top: 50px;
   }
-  .signup2{
+  .signup2 {
     width: 100%;
     height: 500px;
   }
+  .land{
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 750px;
+  }
   .input-fields {
-    width: 85%;
+    width: 95%;
   }
   .fieldone {
-    margin-bottom: 10px;
+    margin-bottom: 25px;
   }
   .fieldone input {
     padding: 14px;
   }
   .agriculture {
-    display: none;
+    width: 100%;
+
   }
   .side-image {
     margin-top: 50px;
@@ -590,137 +682,165 @@
   .sign-up-btn {
     color: white;
   }
-  .welcome-back{
+  .welcome-back {
     display: block;
     text-align: center;
     /* font-size: 20px; */
   }
-  .welcome-back h4{
+  .welcome-back h4 {
     font-weight: 800;
     font-size: 24px;
     font-family: sans-serif;
   }
-  .agriculture2{
+  .agriculture2 {
     display: block;
-    text-align: center;
-    margin-top: 150px;
+    
+  }
+  .agric--image {
     margin-bottom: 10px;
   }
-  .agric--image{
-    margin-bottom: 10px;
-  }
-  .agric--image img{
+  .agric--image img {
     width: 10%;
   }
-  .sign-up-btn{
+  .sign-up-btn {
     padding: 15px;
     color: white;
     font-size: 18px;
   }
-  label{
+  label {
     font-size: 18px;
   }
-  .forgot-password h5{
+  .forgot-password h5 {
     font-size: 18px;
     padding-top: 10px;
   }
-  
-  .color-flex{
+
+  .color-flex {
     display: block;
     width: 100%;
   }
-  .dash-board{
+  .dash-board {
     display: none;
   }
-  .cl1, .cl2{
+  .cl1,
+  .cl2 {
     width: 100%;
   }
-  .color0001,.color02{
+  .color0001,
+  .color02 {
     margin-bottom: 15px;
   }
-  .product-flex{
+  .product-flex {
     display: block;
   }
-  .product1, .product2,.product3{
+  .product1,
+  .product2,
+  .product3 {
     width: 100%;
     margin-bottom: 25px;
   }
-  .content-top{
+  .content-top {
     display: none;
   }
-  .weathersummary{
+  .weathersummary {
     display: block;
   }
-  .con-tent{
+  .con-tent {
     width: 100%;
   }
-  .progress-bar{
+  .progress-bar {
     width: 100%;
   }
-  .weather-img{
+  .weather-img {
     margin-top: -20px;
   }
-  .soil-button{
+  .soil-button {
     display: none;
   }
-  .degrees{
+  .degrees {
     left: 22%;
     font-size: 50px;
     top: -1px;
   }
-  .harvest{
+  .harvest {
     margin-top: 35px;
   }
-  .har-vest{
+  .har-vest {
     width: 55%;
   }
-  .dollars{
+  .dollars {
     font-size: 14px;
   }
-  .ham-burg{
+  .ham-burg {
     background-color: #1e293b;
     height: 50px;
     width: 100%;
     display: block;
     margin-bottom: 10px;
   }
-  .img03{
+  .img03 {
     width: 10%;
   }
-  .img03 img{
+  .img03 img {
     width: 100%;
     margin-top: 3px;
   }
-  .ham-flex{
+  .ham-flex {
     width: 95%;
     margin: auto;
     display: flex;
     justify-content: space-between;
   }
-  .main-board{
+  .main-board {
     width: 80%;
     height: 600px;
   }
-  .menu{
+  .menu {
     display: block;
   }
-  .w-degrees{
+  .w-degrees {
     position: relative;
     top: -40px;
     left: 11px;
   }
-  .cl1 h3{
+  .cl1 h3 {
     font-size: 22px;
   }
-  .today-flex{
+  .today-flex {
     margin-top: -65px;
   }
-  .input-holders{
+  .input-holders {
     width: 81%;
     margin: auto;
-  position: relative;
-  /* display: flex;  */
-  align-items: center;
+    position: relative;
+    /* display: flex;  */
+    align-items: center;
   }
-  
+  .table th,
+  .table td {
+    padding: 12px 8px;
+  }
+
+  .table thead {
+    display: none; /* Hide the table headers on small screens */
+  }
+
+  .table tr {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .table td {
+    display: block;
+    text-align: right;
+    position: relative;
+    padding-left: 50%; /* Add padding to simulate a label */
+  }
+
+  .table td:before {
+    content: attr(data-label); /* Show the column name */
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+  }
 }

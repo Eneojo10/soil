@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import image from "../image/leaf2.png";
 import { AiOutlineLogout } from "react-icons/ai";
-
+import { Link } from "react-router-dom";
 
 function Dashboard() {
   const [selected, setSelected] = useState(null);
@@ -13,17 +13,18 @@ function Dashboard() {
   return (
     <div>
       <div className="main-board">
-        <div className="agricultur">
-          <h3>
-            agri
-            <span className="agric-image">
-              <img src={image} alt="" />
-            </span>
-            culture
-          </h3>
-        </div>
+        <Link to={'/mainboard'} className="b-line">
+          <div className="agricultur">
+            <h3>
+              agri
+              <span className="agric-image">
+                <img src={image} alt="" />
+              </span>
+              culture
+            </h3>
+          </div>
+        </Link>
         <div className="input-holders">
-          
           <input
             type="text"
             placeholder="Search for any content"
@@ -33,25 +34,25 @@ function Dashboard() {
 
         <div className="board-details">
           {[
-            "Dashboard",
-            "Total Farm",
-            "Farm Land",
-            "Total Soil Test",
-            "Total Farm Request",
+            { name: "Dashboard", path: "/mainboard" },
+            { name: "Manage Farmers", path: "/farmers" },
+            { name: "Manage Farm Land", path: "/farms" },
+            { name: "Soil Tester", path: "/soiltest" },
+            { name: "Test Request", path: "/farm-request" },
           ].map((item, index) => (
-            <div
-              key={index}
-              className={`board--details ${
-                selected === index ? "selected" : ""
-              }`}
-              onClick={() => handleClick(index)}
-              style={{
-                // border: selected === index ? "2px solid " : "none",
-                cursor: "pointer",
-              }}
-            >
-              <h4>{item}</h4>
-            </div>
+            <Link to={item.path} key={index} className="b-line">
+              <div
+                className={`board--details ${
+                  selected === index ? "selected" : ""
+                }`}
+                onClick={() => handleClick(index)}
+                style={{
+                  cursor: "pointer",
+                }}
+              >
+                <h4>{item.name}</h4>
+              </div>
+            </Link>
           ))}
         </div>
 

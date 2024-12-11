@@ -77,7 +77,7 @@ function Mainboard() {
                     <div className="color01">
                       <div className="cp">
                         <h3>Total Farm</h3>
-                        <h5>Hello World...</h5>
+                        {/* <h5>Hello World...</h5> */}
                         <p>
                           125 <span className="tons">Tons</span>
                         </p>
@@ -122,7 +122,7 @@ function Mainboard() {
                     <div className="color01">
                       <div className="cp">
                         <h3>Farm Lands</h3>
-                        <h5>Hello World...</h5>
+                        {/* <h5>Hello World...</h5> */}
                         <p>
                           980 <span className="tons">Tons</span>
                         </p>
@@ -163,13 +163,13 @@ function Mainboard() {
                     </div>
                   </div>
                 </div>
-                <br />
+                
                 <div className="color-flex">
                   <div className="color02">
                     <div className="color01">
                       <div className="cp">
                         <h3>Total Soil Test</h3>
-                        <h5>Hello World...</h5>
+                        {/* <h5>Hello World...</h5> */}
                         <p>
                           980 <span className="tons">Tons</span>
                         </p>
@@ -213,7 +213,7 @@ function Mainboard() {
                     <div className="color01">
                       <div className="cp">
                         <h3>Total Farm Request</h3>
-                        <h5>Hello World...</h5>
+                        {/* <h5>Hello World...</h5> */}
                         <p>
                           980 <span className="tons">Tons</span>
                         </p>
