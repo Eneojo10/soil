@@ -77,9 +77,9 @@
   color: white;
 }
 .agriculture {
-  width: 20%;
+  width: 70%;
   margin: auto;
-  padding-top: 100px;
+  padding-top: 10px;
 }
 .agriculture h2 {
   font-size: 22px;
@@ -570,7 +570,7 @@ label {
   background-color: white;
   height: 450px;
   width: 50%;
-  /* border-radius: 16px; */
+  border-radius: 16px;
   margin: auto;
   margin-top: 10px;
 }
