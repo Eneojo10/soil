@@ -7,8 +7,7 @@ import image3 from "../image/weather.png";
 import { IoIosSearch } from "react-icons/io";
 import Chart from "../Chart/Chart";
 import image03 from "../image/leaf2.png";
-import Hamburger from "../Hamburger/Hamburger"
-
+import Hamburger from "../Hamburger/Hamburger";
 
 const data = {
   labels: ["Red", "Blue", "Yellow", "Green"],
@@ -65,13 +64,12 @@ function Mainboard() {
                   <img src={image03} alt="" />
                 </div>
                 <div className="ham">
-                  <Hamburger/>
+                  <Hamburger />
                 </div>
               </div>
             </div>
 
             <div className="weathersummary">
-              
               <div className="cl1">
                 <h3>Summary</h3>
                 <div className="color-flex">
@@ -164,10 +162,10 @@ function Mainboard() {
                       </div>
                     </div>
                   </div>
-                  
-                </div><br/>
+                </div>
+                <br />
                 <div className="color-flex">
-                <div className="color02">
+                  <div className="color02">
                     <div className="color01">
                       <div className="cp">
                         <h3>Total Soil Test</h3>
@@ -263,7 +261,9 @@ function Mainboard() {
                   <h3>Manage your Farm</h3>
                   <div className="rice-farm">
                     <img src={image2} alt="Rice farm" />
-                    <div className="overlay-text"><h5>Manage Your Farm...</h5></div>
+                    <div className="overlay-text">
+                      <h5>Manage Your Farm...</h5>
+                    </div>
                   </div>
                 </div>
                 <br />
@@ -400,7 +400,8 @@ function Mainboard() {
                       </div>
                     </div>
                   </div>
-                </div><br/>
+                </div>
+                <br />
                 <div className="soil-button">
                   <button className="soil-btn">Request for Soil Test</button>
                 </div>
@@ -519,7 +520,7 @@ function Mainboard() {
                       </div>
                     </div>
 
-                    <div style={{ width: "80px",marginTop: "55px" }}>
+                    <div style={{ width: "80px", marginTop: "55px" }}>
                       <Chart type="pie" data={data} options={options} />
                     </div>
                   </div>

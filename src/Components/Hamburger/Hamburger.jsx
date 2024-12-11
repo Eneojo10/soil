@@ -5,17 +5,17 @@ function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((prev) => !prev);
   };
 
   return (
     <div className={`hamburger-menu ${isOpen ? 'open' : ''}`}>
-      <button className='hamburger-btn' onClick={toggleMenu}>
-        <div className='line'></div>
-        <div className='line'></div>
-        <div className='line'></div>
+      <button className="hamburger-btn" onClick={toggleMenu}>
+        <div className="line"></div>
+        <div className="line"></div>
+        <div className="line"></div>
       </button>
-      <nav className='menu'>
+      <nav className="menu">
         <div>
           <Dashboard />
         </div>

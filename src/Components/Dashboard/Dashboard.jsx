@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import image from "../image/leaf2.png";
 import { AiOutlineLogout } from "react-icons/ai";
 
+
 function Dashboard() {
   const [selected, setSelected] = useState(null);
 
@@ -21,16 +22,22 @@ function Dashboard() {
             culture
           </h3>
         </div>
-        
+        <div className="input-holders">
+          
+          <input
+            type="text"
+            placeholder="Search for any content"
+            className="search-input"
+          />
+        </div>
+
         <div className="board-details">
           {[
             "Dashboard",
-            "Analytics",
-            "Fields",
-            "Harvesting",
-            "Finances",
-            "Weather",
-            "Settings",
+            "Total Farm",
+            "Farm Land",
+            "Total Soil Test",
+            "Total Farm Request",
           ].map((item, index) => (
             <div
               key={index}
