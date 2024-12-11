@@ -7,6 +7,30 @@ import axios from "axios";
 
 function Farmland() {
   const [dropdownVisible, setDropdownVisible] = useState(null);
+  const [farmers, setFarmers] = useState([]); // Make sure the state is named "farmers" or "users"
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        let token = localStorage.getItem("token");
+        
+        const response = await axios.get(
+          "https://agriculture-server-beta.onrender.com/api/v1/admin/users",
+          {
+            headers: {
+              "Authorization": `Bearer ${token}`
+            }
+          }
+        );
+        console.log(response.data.data);
+        setFarmers(response.data.data); // Make sure to set the state correctly
+      } catch (error) {
+        console.error("Error fetching summary data:", error);
+      }
+    };
+
+    fetchUsers();
+  }, []);
 
   const toggleDropdown = (index) => {
     setDropdownVisible((prev) => (prev === index ? null : index));
@@ -25,74 +49,75 @@ function Farmland() {
               <thead>
                 <tr>
                   <th>S/N</th>
-                  <th>Name</th>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
                   <th>Email</th>
-                  <th>Phone</th>
                   <th>Address</th>
-                  <th>Location</th>
-                  <th>DOB</th>
-                  <th>State of Origin</th>
-                  <th>Local Govt</th>
+                  <th>Role</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
-                {[1, 2].map((row, index) => (
-                  <tr key={index}>
-                    <td>{index + 1}</td>
-                    <td>Green Acres</td>
-                    <td>California</td>
-                    <td>200</td>
-                    <td>John Doe</td>
-                    <td>John Doe</td>
-                    <td>John Doe</td>
-                    <td>John Doe</td>
-                    <td>John Doe</td>
-                    <td>
-                      <div className="dropdown">
-                        <button
-                          className="dropdown-btn btn-sm"
-                          type="button"
-                          onClick={() => toggleDropdown(index)}
-                        >
-                          <FontAwesomeIcon icon={faEllipsisVertical} />
-                        </button>
-                        {dropdownVisible === index && (
-                          <ul className="dropdown-menu">
-                            <li>
-                              <Link
-                                className="dropdown-item"
-                                to="/farm"
-                                style={{
-                                  textDecoration: "none",
-                                  fontWeight: "700",
-                                  color: "#0099cc",
-                                }}
-                              >
-                                VIEW
-                              </Link>
-                            </li>
-                            <li>
-                              <button
-                                className="dropdown-item"
-                                style={{
-                                  textDecoration: "none",
-                                  fontWeight: "700",
-                                  color: "#cc0000",
-                                  border: "none",
-                                  background: "none",
-                                }}
-                                onClick={() => alert("Edit functionality here")}
-                              >
-                                EDIT
-                              </button>
-                            </li>
-                          </ul>
-                        )}
-                      </div>
+                {farmers.length > 0 ? (
+                  farmers.map((farmer, index) => (
+                    <tr key={farmer._id}> 
+                      <td>{index + 1}</td>
+                      <td>{farmer.profile.firstName}</td>
+                      <td>{farmer.profile.lastName}</td>
+                      <td>{farmer.email}</td>
+                      <td>{farmer.profile.address || "Not available"}</td>                     <td>{farmer.role}</td>
+                      <td>
+                        <div className="dropdown">
+                          <button
+                            className="dropdown-btn btn-sm"
+                            type="button"
+                            onClick={() => toggleDropdown(index)}
+                          >
+                            <FontAwesomeIcon icon={faEllipsisVertical} />
+                          </button>
+                          {dropdownVisible === index && (
+                            <ul className="dropdown-menu">
+                              <li>
+                                <Link
+                                  className="dropdown-item"
+                                  to={`/farm/${farmer._id}`} 
+                                  style={{
+                                    textDecoration: "none",
+                                    fontWeight: "700",
+                                    color: "#0099cc",
+                                  }}
+                                >
+                                  VIEW
+                                </Link>
+                              </li>
+                              <li>
+                                <button
+                                  className="dropdown-item"
+                                  style={{
+                                    textDecoration: "none",
+                                    fontWeight: "700",
+                                    color: "#cc0000",
+                                    border: "none",
+                                    background: "none",
+                                  }}
+                                  onClick={() => alert("Edit functionality here")}
+                                >
+                                  EDIT
+                                </button>
+                              </li>
+                            </ul>
+                          )}
+                        </div>
+                      </td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="7" style={{ textAlign: "center" }}>
+                      No data available
                     </td>
                   </tr>
-                ))}
+                )}
               </tbody>
             </table>
           </div>
