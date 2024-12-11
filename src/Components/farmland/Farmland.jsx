@@ -13,13 +13,13 @@ function Farmland() {
     const fetchUsers = async () => {
       try {
         let token = localStorage.getItem("token");
-        
+
         const response = await axios.get(
           "https://agriculture-server-beta.onrender.com/api/v1/admin/users",
           {
             headers: {
-              "Authorization": `Bearer ${token}`
-            }
+              Authorization: `Bearer ${token}`,
+            },
           }
         );
         console.log(response.data.data);
@@ -60,12 +60,13 @@ function Farmland() {
               <tbody>
                 {farmers.length > 0 ? (
                   farmers.map((farmer, index) => (
-                    <tr key={farmer._id}> 
+                    <tr key={farmer._id}>
                       <td>{index + 1}</td>
                       <td>{farmer.profile.firstName}</td>
                       <td>{farmer.profile.lastName}</td>
                       <td>{farmer.email}</td>
-                      <td>{farmer.profile.address || "Not available"}</td>                     <td>{farmer.role}</td>
+                      <td>{farmer.profile.address || "Not available"}</td>{" "}
+                      <td>{farmer.role}</td>
                       <td>
                         <div className="dropdown">
                           <button
@@ -80,7 +81,7 @@ function Farmland() {
                               <li>
                                 <Link
                                   className="dropdown-item"
-                                  to={`/farm/${farmer._id}`} 
+                                  to={`/farm/${farmer._id}`}
                                   style={{
                                     textDecoration: "none",
                                     fontWeight: "700",
@@ -100,7 +101,9 @@ function Farmland() {
                                     border: "none",
                                     background: "none",
                                   }}
-                                  onClick={() => alert("Edit functionality here")}
+                                  onClick={() =>
+                                    alert("Edit functionality here")
+                                  }
                                 >
                                   EDIT
                                 </button>

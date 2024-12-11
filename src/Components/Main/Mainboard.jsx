@@ -9,6 +9,8 @@ import Chart from "../Chart/Chart";
 import image03 from "../image/leaf2.png";
 import Hamburger from "../Hamburger/Hamburger";
 import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 
 const data = {
   labels: ["Red", "Blue", "Yellow", "Green"],
@@ -36,18 +38,24 @@ const options = {
 
 function Mainboard() {
   const [farmers, setFarmers] = useState({});
+  const [request, setRequest] = useState(null);
+
+
+ 
+
 
   useEffect(() => {
     const fetchFarmers = async () => {
       try {
-        let token=localStorage.getItem("token");
-        
+        let token = localStorage.getItem("token");
+
         const response = await axios.get(
           "https://agriculture-server-beta.onrender.com/api/v1/admin/analytics",
-          {headers: {
-            "Authorization" : `Bearer ${token}`
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
           }
-        }
         );
         console.log(response.data.data);
 
@@ -58,6 +66,29 @@ function Mainboard() {
     };
 
     fetchFarmers();
+  }, []);
+
+  useEffect(() => {
+    const fetchRequest = async () => {
+      try {
+        const token = localStorage.getItem("token");
+
+        const response = await axios.get(
+          "https://agriculture-server-beta.onrender.com/api/v1/admin/requests",
+          {
+            headers: {
+              "Authorization": `Bearer ${token}`,
+            },
+          }
+        );
+        console.log(response.data.data);
+        setRequest(response.data.data); 
+      } catch (error) {
+        console.error("Error fetching summary data:", error);
+      }
+    };
+
+    fetchRequest();
   }, []);
 
   return (
@@ -104,10 +135,7 @@ function Mainboard() {
                       <div className="cp">
                         <h3>Farmers</h3>
                         {/* <h5>Hello World...</h5> */}
-                        <p>
-                          {farmers.totalUsers}
-                          
-                        </p>
+                        <p>{farmers.totalUsers}</p>
                       </div>
                       <div className="circle-progress">
                         <svg width="40" height="80" viewBox="0 0 100 100">
@@ -150,9 +178,7 @@ function Mainboard() {
                       <div className="cp">
                         <h3>Farm Lands</h3>
                         {/* <h5>Hello World...</h5> */}
-                        <p>
-                          {farmers.totalLands} 
-                        </p>
+                        <p>{farmers.totalLands}</p>
                       </div>
                       <div className="circle-progress">
                         <svg width="40" height="80" viewBox="0 0 100 100">
@@ -197,9 +223,7 @@ function Mainboard() {
                       <div className="cp">
                         <h3> Soil Tester</h3>
                         {/* <h5>Hello World...</h5> */}
-                        <p>
-                          980
-                        </p>
+                        <p>980</p>
                       </div>
                       <div className="circle-progress">
                         <svg width="40" height="80" viewBox="0 0 100 100">
@@ -241,9 +265,7 @@ function Mainboard() {
                       <div className="cp">
                         <h3>Soil Request</h3>
                         {/* <h5>Hello World...</h5> */}
-                        <p>
-                          {farmers.totalRequests}
-                        </p>
+                        <p>{farmers.totalRequests}</p>
                       </div>
                       <div className="circle-progress">
                         <svg width="40" height="80" viewBox="0 0 100 100">
@@ -286,264 +308,93 @@ function Mainboard() {
 
                 <div>
                   <h3>Manage your Farm</h3>
-                  <div className="rice-farm">
-                    <table
-                      className="table table-striped"
-                      style={{ width: "100%" }}
-                    >
+                  <div className="table-container">
+                    <table className="table">
                       <thead>
                         <tr>
-                          <th style={{ padding: "8px" }}>Maize</th>
-                          <th style={{ padding: "8px" }}>Rice</th>
-                          <th
-                            style={{
-                              // border: "2px solid green",
-                              padding: "8px",
-                            }}
-                          >
-                            Wheat
-                          </th>
-                          <th
-                            style={{
-                              // border: "2px solid orange",
-                              padding: "8px",
-                            }}
-                          >
-                            Beans
-                          </th>
-                          <th
-                            style={{
-                              // border: "2px solid purple",
-                              padding: "8px",
-                            }}
-                          >
-                            Soil
-                          </th>
+                          <th>S/N</th>
+                          <th>Farm Name</th>
+                          <th>Address</th>
+                          <th>Status</th>
+                          <th>Actions</th>
                         </tr>
                       </thead>
                       <tbody>
-                        {[1, 2, 3].map((row, rowIndex) => (
-                          <tr key={rowIndex}>
-                            <td
-                              style={{
-                                // border: "2px solid #d2edda",
-                                padding: "8px",
-                              }}
-                            >
-                              Data 1-{row}
-                            </td>
-                            <td
-                              style={{
-                                // border: "2px solid #8098ab",
-                                padding: "8px",
-                              }}
-                            >
-                              Data 2-{row}
-                            </td>
-                            <td
-                              style={{
-                                // border: "2px solid green",
-                                padding: "8px",
-                              }}
-                            >
-                              Data 3-{row}
-                            </td>
-                            <td
-                              style={{
-                                // border: "2px solid orange",
-                                padding: "8px",
-                              }}
-                            >
-                              Data 4-{row}
-                            </td>
-                            <td
-                              style={{
-                                // border: "2px solid purple",
-                                padding: "8px",
-                              }}
-                            >
-                              Data 5-{row}
-                            </td>
+                        {request ? (
+                          request?.map((land, index) => (
+                            <tr key={land._id}>
+                              <td>{index + 1}</td>
+                              <td>{land.land.name}</td>
+                              <td>{land.land.location.address}</td>
+                              <td>{land.status || "N/A"}</td>
+                              <td>
+                                <div className="dropdown">
+                                  <button
+                                    className="dropdown-btn btn-sm"
+                                    type="button"
+                                    onClick={() => toggleDropdown(index)}
+                                  >
+                                    <FontAwesomeIcon
+                                      icon={faEllipsisVertical}
+                                    />
+                                  </button>
+                                  {/* {dropdownVisible === index && (
+                                    <ul className="dropdown-menu">
+                                      <li>
+                                        <Link
+                                          className="dropdown-item"
+                                          to={`/farm/${land._id}`} // Assuming you pass farm ID to view
+                                          style={{
+                                            textDecoration: "none",
+                                            fontWeight: "700",
+                                            color: "#0099cc",
+                                          }}
+                                        >
+                                          VIEW
+                                        </Link>
+                                      </li>
+                                      <li>
+                                        <button
+                                          className="dropdown-item"
+                                          style={{
+                                            textDecoration: "none",
+                                            fontWeight: "700",
+                                            color: "#cc0000",
+                                            border: "none",
+                                            background: "none",
+                                          }}
+                                          onClick={() =>
+                                            alert("Edit functionality here")
+                                          }
+                                        >
+                                          EDIT
+                                        </button>
+                                      </li>
+                                    </ul>
+                                  )} */}
+                                </div>
+                              </td>
+                            </tr>
+                          ))
+                        ) : (
+                          <tr>
+                            <td colSpan="5">Loading...</td>
                           </tr>
-                        ))}
+                        )}
                       </tbody>
                     </table>
                   </div>
                 </div>
                 <br />
-                <div>
-                  <h3>Productive Analysis</h3>
-                  <div className="product-flex">
-                    <div className="product1">
-                      <div className="date">
-                        <h4>January 22</h4>
-                        <br />
-                        <div className="crops">
-                          <div className="text-with-line">
-                            <div className="progress-item">
-                              <span className="progress-label">
-                                Wheat - 40%
-                              </span>
-                              <div className="progress-bar">
-                                <div
-                                  className="progress-fill"
-                                  style={{ width: "40%" }}
-                                ></div>
-                              </div>
-                            </div>
-                            {/* <br /> */}
-                            <div className="progress-item">
-                              <span className="progress-label">Rice - 59%</span>
-                              <div className="progress-bar">
-                                <div
-                                  className="progress-fill1"
-                                  style={{ width: "59%" }}
-                                ></div>
-                              </div>
-                            </div>
-                            {/* <br /> */}
-                            <div className="progress-item">
-                              <span className="progress-label">
-                                Maize - 20%
-                              </span>
-                              <div className="progress-bar">
-                                <div
-                                  className="progress-fill01"
-                                  style={{ width: "20%" }}
-                                ></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="product2">
-                      <div className="date">
-                        <h4>Febuary 22</h4>
-                        <br />
-                        <div className="crops">
-                          <div className="text-with-line">
-                            <div className="progress-item">
-                              <span className="progress-label">
-                                Wheat - 40%
-                              </span>
-                              <div className="progress-bar">
-                                <div
-                                  className="progress-fill"
-                                  style={{ width: "40%" }}
-                                ></div>
-                              </div>
-                            </div>
-                            {/* <br /> */}
-                            <div className="progress-item">
-                              <span className="progress-label">Corn - 59%</span>
-                              <div className="progress-bar">
-                                <div
-                                  className="progress-fill1"
-                                  style={{ width: "59%" }}
-                                ></div>
-                              </div>
-                            </div>
-                            {/* <br /> */}
-                            <div className="progress-item">
-                              <span className="progress-label">
-                                Barley - 20%
-                              </span>
-                              <div className="progress-bar">
-                                <div
-                                  className="progress-fill01"
-                                  style={{ width: "20%" }}
-                                ></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="product3">
-                      <div className="date">
-                        <h4>Febuary 22</h4>
-                        <br />
-                        <div className="crops">
-                          <div className="text-with-line">
-                            <div className="progress-item">
-                              <span className="progress-label">
-                                Beans - 40%
-                              </span>
-                              <div className="progress-bar">
-                                <div
-                                  className="progress-fill"
-                                  style={{ width: "40%" }}
-                                ></div>
-                              </div>
-                            </div>
-                            {/* <br /> */}
-                            <div className="progress-item">
-                              <span className="progress-label">Corn - 59%</span>
-                              <div className="progress-bar">
-                                <div
-                                  className="progress-fill1"
-                                  style={{ width: "59%" }}
-                                ></div>
-                              </div>
-                            </div>
-                            {/* <br /> */}
-                            <div className="progress-item">
-                              <span className="progress-label">
-                                Potato - 20%
-                              </span>
-                              <div className="progress-bar">
-                                <div
-                                  className="progress-fill01"
-                                  style={{ width: "20%" }}
-                                ></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
                 <br />
                 {/* <div className="soil-button">
                   <button className="soil-btn">Request for Soil Test</button>
                 </div> */}
               </div>
               <div className="cl2">
-                <h3>Weather Forecast</h3>
-                <div className="color03">
-                  <div className="weather-flex">
-                    <div className="weather-img">
-                      <img src={image3} alt="" />
-                    </div>
-                    <div className="today">
-                      <h2>Today</h2>
-                      <div className="weather-num-bers">
-                        <h3>
-                          37{" "}
-                          <span className="num_bers">
-                            <span className="w-degreess">
-                              /123
-                              {/* <WiDegrees /> */}
-                            </span>
-                          </span>
-                          <span className="w-degrees">
-                            <WiDegrees />
-                          </span>
-                        </h3>
-                      </div>
-                      <div className="today-flex">
-                        <div>
-                          <h5>Rainy</h5>
-                        </div>
-                        <div>
-                          <h5>Cloudy</h5>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                {/* <h3>Weather Forecast</h3> */}
+
                 <div className="temperature">
                   <div className="w1">
                     <h4>June 25</h4>
