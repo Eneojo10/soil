@@ -56,9 +56,7 @@ function SignUp() {
               </Link>
             </div>
 
-            <div className="forgot-password">
-              <h5>Don't have an account? Sign Up</h5>
-            </div>
+             
           </div>
         </div>
       </div>
