@@ -36,6 +36,7 @@ function SignUp() {
           navigate('/admin');
         } else {
           navigate("/mainboard");
+          
         }
       }
     } catch (err) {
