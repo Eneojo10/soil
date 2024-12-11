@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link
+import { Link } from "react-router-dom";
 import Dashboard from "../Dashboard/Dashboard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
@@ -19,10 +19,10 @@ function Farmland() {
       <div className="tb">
         <div className="containerk">
           <h2>Farmers Table</h2>
-          <div className="table-responsive">
+          <div className="table-container">
             <table className="table">
               <thead>
-              <tr>
+                <tr>
                   <th>S/N</th>
                   <th>Name</th>
                   <th>Location</th>
@@ -31,7 +31,6 @@ function Farmland() {
                   <th>Brief Description</th>
                   <th>Address</th>
                   <th>Actions</th>
-                  
                 </tr>
               </thead>
               <tbody>
@@ -44,8 +43,7 @@ function Farmland() {
                     <td>John Doe</td>
                     <td>John Doe</td>
                     <td>John Doe</td>
-                    {/* <td>John Doe</td> */}
-                    {/* <td>John Doe</td> */}
+                    
                     <td>
                       <div className="dropdown">
                         <button

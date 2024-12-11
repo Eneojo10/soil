@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link
+import { Link } from "react-router-dom";
 import Dashboard from "../Dashboard/Dashboard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
@@ -19,7 +19,7 @@ function Farmland() {
       <div className="tb">
         <div className="containerk">
           <h2>Farmers Table</h2>
-          <div className="table-responsive">
+          <div className="table-container">
             <table className="table">
               <thead>
                 <tr>
@@ -35,7 +35,6 @@ function Farmland() {
                   <th>Actions</th>
                 </tr>
               </thead>
-              
               <tbody>
                 {[1, 2].map((row, index) => (
                   <tr key={index}>

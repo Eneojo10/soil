@@ -189,9 +189,47 @@ h2 {
   margin-bottom: 20px;
 }
 
-.table-responsive {
+.table-container {
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f4f4f4;
+}
+
+.dropdown-menu {
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
 
 .table {
   width: 100%;
@@ -199,12 +237,7 @@ h2 {
   margin: 0 auto;
 }
 
-.table th,
-.table td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: center;
-}
+
 .tb {
   width: 80%;
   /* margin: auto; */
@@ -212,9 +245,7 @@ h2 {
 label {
   font-size: 18px;
 }
-.table th {
-  background-color: #f4f4f4;
-}
+
 .color02 {
   background-color: #faffe9;
   height: 100px;
@@ -816,31 +847,8 @@ label {
     /* display: flex;  */
     align-items: center;
   }
-  .table th,
-  .table td {
-    padding: 12px 8px;
+  .tb{
+    width: 100%;
   }
-
-  .table thead {
-    display: none; /* Hide the table headers on small screens */
-  }
-
-  .table tr {
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  .table td {
-    display: block;
-    text-align: right;
-    position: relative;
-    padding-left: 50%; /* Add padding to simulate a label */
-  }
-
-  .table td:before {
-    content: attr(data-label); /* Show the column name */
-    position: absolute;
-    left: 10px;
-    font-weight: bold;
-  }
+               
 }
