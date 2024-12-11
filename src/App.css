@@ -19,9 +19,9 @@
   width: 80%;
   margin: auto;
   padding-top: 20px;
-  color: red;
+
 }
-.b-line{
+.b-line {
   text-decoration: none;
 }
 .dropdown-menu {
@@ -43,7 +43,7 @@
 .dropdown-item:hover {
   background-color: #f5f5f5;
 }
-.dropdown-item{
+.dropdown-item {
   font-size: 12px;
 }
 
@@ -57,6 +57,7 @@
 .board--details.selected h4 {
   color: #2c3e50;
   font-weight: 300;
+  font-family: sans-serif;
 }
 .board--details h4 {
   color: white;
@@ -171,7 +172,13 @@
   padding-top: 10px;
   gap: 20px;
 }
+.tab-bles{
+  width: 2 5%;
+}
 .table {
+  width: 100%;
+}
+.tables{
   width: 100%;
 }
 .color-flex {
@@ -230,13 +237,11 @@ h2 {
   background-color: #f5f5f5;
 }
 
-
 .table {
   width: 100%;
   border-collapse: collapse;
   margin: 0 auto;
 }
-
 
 .tb {
   width: 80%;
@@ -262,6 +267,10 @@ label {
 .weathersummary {
   display: flex;
   justify-content: space-between;
+}
+.error {
+  color: red;
+  font-size: 12px;
 }
 .rice-farm {
   width: 100%;
@@ -678,7 +687,7 @@ label {
   .side-color {
     display: none;
   }
-  .signup{
+  .signup {
     width: 95%;
     margin: auto;
     height: 600px;
@@ -688,7 +697,7 @@ label {
     width: 100%;
     height: 500px;
   }
-  .land{
+  .land {
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -705,7 +714,6 @@ label {
   }
   .agriculture {
     width: 100%;
-
   }
   .side-image {
     margin-top: 50px;
@@ -725,7 +733,6 @@ label {
   }
   .agriculture2 {
     display: block;
-    
   }
   .agric--image {
     margin-bottom: 10px;
@@ -844,11 +851,22 @@ label {
     width: 81%;
     margin: auto;
     position: relative;
-    /* display: flex;  */
     align-items: center;
   }
-  .tb{
+  .tb {
     width: 100%;
   }
-               
+  .dropdown-menu {
+    width: 100%;
+    position: static; 
+    box-shadow: none;
+  }
+
+  .table-container {
+    margin-bottom: 20px;
+  }
+  .tab-flex {
+    position: relative;
+    overflow: visible;
+  }
 }
