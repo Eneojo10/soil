@@ -388,12 +388,10 @@ function Mainboard() {
                 <br />
 
                 <br />
-                {/* <div className="soil-button">
-                  <button className="soil-btn">Request for Soil Test</button>
-                </div> */}
+                
               </div>
               <div className="cl2">
-                {/* <h3>Weather Forecast</h3> */}
+                
 
                 <div className="temperature">
                   <div className="w1">

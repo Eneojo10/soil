@@ -16,11 +16,11 @@ function Dashboard() {
         <Link to={"/mainboard"} className="b-line">
           <div className="agricultur">
             <h3>
-              agri
+              Farm
               <span className="agric-image">
                 <img src={image} alt="" />
               </span>
-              cultur
+              Track
             </h3>
           </div>
         </Link>
