@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import image from "../image/leaf2.png";
 import { AiOutlineLogout } from "react-icons/ai";
-import {AiOutlineUser, AiOutlineSearch } from "react-icons/ai"; 
+import {AiOutlineUser, AiOutlineSearch } from "react-icons/ai";
+import { LuTestTube } from "react-icons/lu"; 
 import { MdOutlineDashboard } from "react-icons/md";
 import { Link } from "react-router-dom";
 
@@ -43,7 +44,7 @@ function Dashboard() {
           {[
             { name: "Dashboard", path: "/mainboard", icon: <MdOutlineDashboard /> },
             { name: "Farmers", path: "/farmers", icon: <AiOutlineUser /> },
-            { name: "Test Request", path: "/farms", icon: <AiOutlineSearch /> },
+            { name: "Test Request", path: "/farms", icon: <LuTestTube /> },
           ].map((item, index) => (
             <Link to={item.path} key={index} className="b-line">
               <div
@@ -57,7 +58,7 @@ function Dashboard() {
                   alignItems: "center",
                 }}
               >
-                <span style={{ marginRight: "10px" }}>{item.icon}</span> {/* Display the icon */}
+                <span style={{ marginRight: "10px", color:"white",marginTop:"-24px" }}>{item.icon}</span> {/* Display the icon */}
                 <h4 style={{ fontSize: "20px", fontFamily: "sans-serif" }}>
                   {item.name}
                 </h4>
