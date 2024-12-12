@@ -296,7 +296,7 @@ function Mainboard() {
                             fontSize={"28px"}
                             className="circle-text"
                           >
-                            13%
+                            14%
                           </text>
                         </svg>
                       </div>
