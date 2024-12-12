@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import image from "../image/leaf2.png";
 import { AiOutlineLogout } from "react-icons/ai";
+import {AiOutlineUser, AiOutlineSearch } from "react-icons/ai"; 
+import { MdOutlineDashboard } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 function Dashboard() {
@@ -39,10 +41,9 @@ function Dashboard() {
           }}
         >
           {[
-            { name: "Dashboard", path: "/mainboard" },
-            { name: "Farmers", path: "/farmers" },
-            { name: "Test Request", path: "/farms" },
-            // { name: "Test Request", path: "/farm-request" },
+            { name: "Dashboard", path: "/mainboard", icon: <MdOutlineDashboard /> },
+            { name: "Farmers", path: "/farmers", icon: <AiOutlineUser /> },
+            { name: "Test Request", path: "/farms", icon: <AiOutlineSearch /> },
           ].map((item, index) => (
             <Link to={item.path} key={index} className="b-line">
               <div
@@ -52,10 +53,14 @@ function Dashboard() {
                 onClick={() => handleClick(index)}
                 style={{
                   cursor: "pointer",
+                  display: "flex", // Use flex to align the icon and text
+                  alignItems: "center",
                 }}
               >
-                <h4 style={{ fontSize: "20px", fontFamily:"sans-serif"}}>{item.name}</h4>{" "}
-                
+                <span style={{ marginRight: "10px" }}>{item.icon}</span> {/* Display the icon */}
+                <h4 style={{ fontSize: "20px", fontFamily: "sans-serif" }}>
+                  {item.name}
+                </h4>
               </div>
             </Link>
           ))}

@@ -4,7 +4,7 @@ import Dashboard from "../Dashboard/Dashboard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios"; 
-import './Farmland.css'; // Add any custom styles here
+
 
 function Farmland() {
   const [dropdownVisible, setDropdownVisible] = useState(null);
@@ -47,7 +47,7 @@ function Farmland() {
       </div>
       <div className="tb">
         <div className="containerk">
-          <h2>Request Table</h2>
+          <h2>Test Request</h2>
           <div className="table-container">
             <table className="table">
               <thead>

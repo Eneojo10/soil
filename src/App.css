@@ -356,13 +356,7 @@ label {
 .date h4 {
   margin-bottom: 10px;
 }
-/* .crops {
-  width: 85%;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-} */
+
 .harvest-chart {
   display: flex;
   width: 90%;
@@ -381,12 +375,12 @@ label {
 .circle-progress {
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
+  
 }
 
 .circle-bg {
   fill: none;
-  stroke: #e0e0e0; /* Background color of the circle */
+  stroke: #e0e0e0; 
   stroke-width: 9;
 }
 
@@ -419,7 +413,7 @@ label {
 .num-bers {
   width: 80%;
   margin: auto;
-  padding-top: 10px;
+  padding-top: 5px;
   position: relative;
 }
 .num-bers p {
@@ -431,7 +425,7 @@ label {
 }
 .degrees {
   position: absolute;
-  top: -5px;
+  top: -10px;
   left: 33%;
   transform: translateX(-50%);
   font-size: 45px;
@@ -447,7 +441,9 @@ label {
   display: flex;
   flex-direction: column;
 }
-
+.containerk{
+  margin-top: 15px;
+}
 .progress-bar {
   width: 150px;
   height: 5px;
@@ -859,9 +855,9 @@ label {
     display: none;
   }
   .degrees {
-    left: 22%;
-    font-size: 50px;
-    top: -1px;
+    left: 24%;
+    font-size: 55px;
+    top: -13px;
   }
   .harvest {
     margin-top: 35px;
