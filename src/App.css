@@ -252,10 +252,11 @@ label {
 }
 
 .color02 {
-  background-color: #faffe9;
+  /* background-color: #faffe9; */
   height: 100px;
   width: 100%;
   border-radius: 8px;
+  border: 1px solid black;
   margin-bottom: 20px;
 }
 .color03 {
@@ -394,10 +395,11 @@ label {
   transition: stroke-dashoffset 0.5s ease;
 }
 .color0001 {
-  background-color: #d2edda;
+  /* background-color: #d2edda; */
   height: 100px;
   width: 100%;
   border-radius: 8px;
+  border: 1px solid black;
 }
 .cp h4 {
   margin-bottom: 10px;
