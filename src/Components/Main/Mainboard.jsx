@@ -223,7 +223,7 @@ function Mainboard() {
                       <div className="cp">
                         <h5> Soil Tester</h5>
                         {/* <h5>Hello World...</h5> */}
-                        <p>10</p>
+                        {/* <p>10</p> */}
                       </div>
                       <div className="circle-progress">
                         <svg width="40" height="80" viewBox="0 0 100 100">
@@ -254,7 +254,7 @@ function Mainboard() {
                             fontSize={"28px"}
                             className="circle-text"
                           >
-                            10%
+                            0%
                           </text>
                         </svg>
                       </div>
