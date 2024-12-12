@@ -19,7 +19,6 @@
   width: 80%;
   margin: auto;
   padding-top: 20px;
-
 }
 .b-line {
   text-decoration: none;
@@ -68,13 +67,14 @@
   padding: 25px;
 }
 .agric-image img {
-  width: 10%;
+  width: 15%;
 }
 .agric--image img {
   width: 18%;
 }
 .agricultur h3 {
   color: white;
+  font-size: 22px;
 }
 .agriculture {
   width: 70%;
@@ -302,7 +302,7 @@ label {
 .temperature {
   display: flex;
   justify-content: space-between;
-  margin-top: 70px;
+  margin-top: 45px;
   margin-bottom: 10px;
 }
 .temperatures {
@@ -314,11 +314,11 @@ label {
   height: 100px;
   width: 45%;
   border-radius: 8px;
-  /* margin-bottom: 10px; */
 }
 .w1 h4 {
   text-align: center;
   padding-top: 10px;
+  font-size: 14px;
 }
 .product1 {
   background-color: #faffe9;
@@ -344,7 +344,7 @@ label {
 }
 .harvest {
   background-color: #d2edda;
-  height: 160px;
+  height: 230px;
   width: 100%;
   margin-top: 190px;
   border-radius: 8px;
@@ -368,6 +368,7 @@ label {
   width: 90%;
   margin: auto;
   justify-content: space-between;
+  padding-top: 15px;
 }
 .har-vest h4 {
   padding-top: 10px;
@@ -430,10 +431,10 @@ label {
 }
 .degrees {
   position: absolute;
-  top: 7px;
+  top: -5px;
   left: 33%;
   transform: translateX(-50%);
-  font-size: 40px;
+  font-size: 45px;
   color: #333;
 }
 .w-degrees {
@@ -531,6 +532,7 @@ label {
 }
 .harvest-holder h4 {
   font-weight: 100;
+  font-size: 18px;
 }
 .border-line {
   border-bottom: 1px solid black;
@@ -538,10 +540,11 @@ label {
 }
 .dollars {
   font-weight: 900;
-  font-size: 26px;
+  font-size: 20px;
 }
 .estimate h4 {
   font-weight: 200;
+  font-weight: 15px;
 }
 .soil-btn {
   background: transparent;
@@ -667,6 +670,66 @@ label {
 .hamburger-menu.open .menu {
   transform: translateX(0);
 }
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f4f4f4;
+}
+
+.table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+}
+
+.error {
+  color: #cc0000;
+}
+
+.dropdown-menu {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.dropdown-btn:hover {
+  color: #0056b3;
+}
+
 @media (max-width: 500px) {
   .flex-colors {
     width: 100%;

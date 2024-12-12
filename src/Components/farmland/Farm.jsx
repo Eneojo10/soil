@@ -4,10 +4,13 @@ import Dashboard from "../Dashboard/Dashboard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisVertical } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios"; 
+import './Farmland.css'; // Add any custom styles here
 
 function Farmland() {
   const [dropdownVisible, setDropdownVisible] = useState(null);
   const [landData, setLandData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchFarmers = async () => {
@@ -22,10 +25,11 @@ function Farmland() {
             },
           }
         );
-        console.log(response.data.data);
-        setLandData(response.data.data); 
+        setLandData(response.data.data);
+        setLoading(false);
       } catch (error) {
-        console.error("Error fetching summary data:", error);
+        setError("Error fetching data.");
+        setLoading(false);
       }
     };
 
@@ -56,7 +60,15 @@ function Farmland() {
                 </tr>
               </thead>
               <tbody>
-                {landData ? (
+                {loading ? (
+                  <tr>
+                    <td colSpan="5" className="loading">Loading...</td>
+                  </tr>
+                ) : error ? (
+                  <tr>
+                    <td colSpan="5" className="error">{error}</td>
+                  </tr>
+                ) : (
                   landData.map((land, index) => (
                     <tr key={land._id}>
                       <td>{index + 1}</td>
@@ -78,11 +90,6 @@ function Farmland() {
                                 <Link
                                   className="dropdown-item"
                                   to={`/farm/${land._id}`} // Assuming you pass farm ID to view
-                                  style={{
-                                    textDecoration: "none",
-                                    fontWeight: "700",
-                                    color: "#0099cc",
-                                  }}
                                 >
                                   VIEW
                                 </Link>
@@ -90,13 +97,6 @@ function Farmland() {
                               <li>
                                 <button
                                   className="dropdown-item"
-                                  style={{
-                                    textDecoration: "none",
-                                    fontWeight: "700",
-                                    color: "#cc0000",
-                                    border: "none",
-                                    background: "none",
-                                  }}
                                   onClick={() => alert("Edit functionality here")}
                                 >
                                   EDIT
@@ -108,10 +108,6 @@ function Farmland() {
                       </td>
                     </tr>
                   ))
-                ) : (
-                  <tr>
-                    <td colSpan="5">Loading...</td>
-                  </tr>
                 )}
               </tbody>
             </table>

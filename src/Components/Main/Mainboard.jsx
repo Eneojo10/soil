@@ -4,7 +4,7 @@ import image from "../image/user2.jpg";
 import image2 from "../image/soil.jpg";
 import { WiDegrees } from "react-icons/wi";
 import image3 from "../image/weather.png";
-import { IoIosSearch } from "react-icons/io";
+// import { IoIosSearch } from "react-icons/io";
 import Chart from "../Chart/Chart";
 import image03 from "../image/leaf2.png";
 import Hamburger from "../Hamburger/Hamburger";
@@ -102,7 +102,7 @@ function Mainboard() {
           <div className="cont-ent">
             <div className="content-top">
               <div className="input-holder">
-                <IoIosSearch className="search-icon" />
+                {/* <IoIosSearch className="search-icon" /> */}
                 <input
                   type="text"
                   placeholder="Search for any content"
@@ -128,12 +128,12 @@ function Mainboard() {
 
             <div className="weathersummary">
               <div className="cl1">
-                <h3>Summary</h3>
+                <h4>Summary</h4>
                 <div className="color-flex">
                   <div className="color0001">
                     <div className="color01">
                       <div className="cp">
-                        <h3>Farmers</h3>
+                        <h5>Farmers</h5>
                         {/* <h5>Hello World...</h5> */}
                         <p>{farmers.totalUsers}</p>
                       </div>
@@ -166,7 +166,7 @@ function Mainboard() {
                             fontSize={"28px"}
                             className="circle-text"
                           >
-                            12%
+                            10%
                           </text>
                         </svg>
                       </div>
@@ -176,7 +176,7 @@ function Mainboard() {
                   <div className="color02">
                     <div className="color01">
                       <div className="cp">
-                        <h3>Farm Lands</h3>
+                        <h5>Farm Lands</h5>
                         {/* <h5>Hello World...</h5> */}
                         <p>{farmers.totalLands}</p>
                       </div>
@@ -209,7 +209,7 @@ function Mainboard() {
                             fontSize={"28px"}
                             className="circle-text"
                           >
-                            40%
+                            13%
                           </text>
                         </svg>
                       </div>
@@ -221,9 +221,9 @@ function Mainboard() {
                   <div className="color02">
                     <div className="color01">
                       <div className="cp">
-                        <h3> Soil Tester</h3>
+                        <h5> Soil Tester</h5>
                         {/* <h5>Hello World...</h5> */}
-                        <p>980</p>
+                        <p>10</p>
                       </div>
                       <div className="circle-progress">
                         <svg width="40" height="80" viewBox="0 0 100 100">
@@ -254,7 +254,7 @@ function Mainboard() {
                             fontSize={"28px"}
                             className="circle-text"
                           >
-                            40%
+                            10%
                           </text>
                         </svg>
                       </div>
@@ -263,7 +263,7 @@ function Mainboard() {
                   <div className="color0001">
                     <div className="color01">
                       <div className="cp">
-                        <h3>Soil Request</h3>
+                        <h5>Soil Request</h5>
                         {/* <h5>Hello World...</h5> */}
                         <p>{farmers.totalRequests}</p>
                       </div>
@@ -296,7 +296,7 @@ function Mainboard() {
                             fontSize={"28px"}
                             className="circle-text"
                           >
-                            40%
+                            13%
                           </text>
                         </svg>
                       </div>
@@ -307,7 +307,7 @@ function Mainboard() {
                 <br />
 
                 <div>
-                  <h3>Manage your Farm</h3>
+                  <h5>Manage your Farm</h5>
                   <div className="table-container">
                     <table className="table">
                       <thead>
@@ -448,7 +448,7 @@ function Mainboard() {
                 <div className="harvest">
                   <div className="harvest-chart">
                     <div className="har-vest">
-                      <h4>Harvesting Cost</h4>
+                      <h5>Harvesting Cost</h5>
                       <div className="harvest-holder">
                         <div>
                           <h4>Wheat</h4>
@@ -473,7 +473,7 @@ function Mainboard() {
                       </div>
                     </div>
 
-                    <div style={{ width: "80px", marginTop: "55px" }}>
+                    <div style={{ width: "70px", marginTop: "55px" }}>
                       <Chart type="pie" data={data} options={options} />
                     </div>
                   </div>

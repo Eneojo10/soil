@@ -16,11 +16,11 @@ function Dashboard() {
         <Link to={"/mainboard"} className="b-line">
           <div className="agricultur">
             <h3>
-              Farm
+              agri
               <span className="agric-image">
                 <img src={image} alt="" />
               </span>
-              Track
+              cultur
             </h3>
           </div>
         </Link>
@@ -41,9 +41,8 @@ function Dashboard() {
           {[
             { name: "Dashboard", path: "/mainboard" },
             { name: "Farmers", path: "/farmers" },
-            { name: " Soil Tester", path: "/farms" },
-            
-            { name: "Test Request", path: "/farm-request" },
+            { name: "Test Request", path: "/farms" },
+            // { name: "Test Request", path: "/farm-request" },
           ].map((item, index) => (
             <Link to={item.path} key={index} className="b-line">
               <div
@@ -55,20 +54,21 @@ function Dashboard() {
                   cursor: "pointer",
                 }}
               >
-                <h4>{item.name}</h4>
+                <h4 style={{ fontSize: "20px", fontFamily:"sans-serif"}}>{item.name}</h4>{" "}
+                
               </div>
             </Link>
           ))}
         </div>
 
-        <div className="log-out">
+        {/* <div className="log-out">
           <div className="logout">
             <AiOutlineLogout />
           </div>
           <div className="log--out">
             <h4>Logout</h4>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
